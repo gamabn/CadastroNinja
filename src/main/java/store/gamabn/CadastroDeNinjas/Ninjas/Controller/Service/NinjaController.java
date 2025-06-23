@@ -1,4 +1,4 @@
-package store.gamabn.CadastroDeNinjas;
+package store.gamabn.CadastroDeNinjas.Ninjas.Controller.Service;
 
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
