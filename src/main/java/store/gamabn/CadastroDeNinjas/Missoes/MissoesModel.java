@@ -1,10 +1,10 @@
-package store.gamabn.CadastroDeNinjas.Missoes.Controller;
+package store.gamabn.CadastroDeNinjas.Missoes;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import store.gamabn.CadastroDeNinjas.Ninjas.Controller.Service.NinjaModel;
+import store.gamabn.CadastroDeNinjas.Ninjas.NinjaModel;
 
 import java.util.List;
 

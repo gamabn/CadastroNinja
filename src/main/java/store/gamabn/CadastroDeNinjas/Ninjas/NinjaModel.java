@@ -1,15 +1,10 @@
-package store.gamabn.CadastroDeNinjas.Ninjas.Controller.Service;
+package store.gamabn.CadastroDeNinjas.Ninjas;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import store.gamabn.CadastroDeNinjas.Missoes.Controller.MissoesModel;
-
-import java.util.Collection;
-import java.util.Iterator;
-import java.util.List;
-import java.util.ListIterator;
+import store.gamabn.CadastroDeNinjas.Missoes.MissoesModel;
 
 //JPA = java PERSISTENCE API
 @Entity
