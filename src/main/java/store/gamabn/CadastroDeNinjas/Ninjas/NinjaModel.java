@@ -13,16 +13,22 @@ import store.gamabn.CadastroDeNinjas.Missoes.MissoesModel;
 @AllArgsConstructor
 @Data
 public class NinjaModel {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-
+    @Column (name="id")
     private Long id;
 
+    @Column(name="name")
     private String nome;
+
+    @Column(name="img_url")
+    private String imgUrl;
 
     @Column(unique = true)
     private String email;
 
+    @Column(name="idade")
     private int idade;
 
     //@ManyToOne um ninja tem uma unica missao
