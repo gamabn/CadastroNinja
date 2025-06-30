@@ -2,17 +2,25 @@ package store.gamabn.CadastroDeNinjas.Missoes;
 
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
 @RequestMapping("missoes")
 public class MIssoesController {
+
+    MissoesService missoesService;
+
+    public MIssoesController(MissoesService missoesService) {
+        this.missoesService = missoesService;
+    }
 
     @PostMapping("/criar")
     public String cadastrarMissoes(){
         return "Missao cadastrada";
     }
     @GetMapping("/listar")
-    public String ListarMissoes(){
-        return "Missoes listadas";
+    public List<MissoesModel> ListarMissoes(){
+        return missoesService.listarMissoes();
 
     }
     @GetMapping("listarId")
