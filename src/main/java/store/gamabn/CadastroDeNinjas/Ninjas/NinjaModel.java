@@ -1,5 +1,6 @@
 package store.gamabn.CadastroDeNinjas.Ninjas;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -20,6 +21,7 @@ public class NinjaModel {
     private Long id;
 
     @Column(name="name")
+    @JsonProperty("nome")
     private String nome;
 
     @Column(name="img_url")
@@ -35,5 +37,7 @@ public class NinjaModel {
     @ManyToOne
     @JoinColumn(name = "missoes_id")  // Chave estrangeira
     private MissoesModel missoes;
+
+
 
 }
