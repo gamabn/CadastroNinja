@@ -1,5 +1,6 @@
 package store.gamabn.CadastroDeNinjas.Ninjas;
 
+import jakarta.persistence.Id;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Example;
 import org.springframework.data.domain.Page;
@@ -36,6 +37,14 @@ public class NinjaService {
 
     public void deletarNinjaPoId( Long id){
         ninjaRepository.deleteById(id);
+    }
+
+    public NinjaModel atualizarNinja( long id, NinjaModel ninjaAtualizado){
+      if(ninjaRepository.existsById(id)) {
+          ninjaAtualizado.setId(id);
+          return ninjaRepository.save(ninjaAtualizado);
+      }
+      return null;
     }
 }
 
