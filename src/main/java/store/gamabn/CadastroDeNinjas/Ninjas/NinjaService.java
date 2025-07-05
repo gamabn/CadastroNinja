@@ -15,11 +15,12 @@ import java.util.function.Function;
 @Service
 public class NinjaService {
 
-
     private NinjaRepository ninjaRepository ;
+    private NinjaMapper ninjaMapper;
 
-    public NinjaService(NinjaRepository ninjaRepository) {
+    public NinjaService(NinjaRepository ninjaRepository, NinjaMapper ninjaMapper) {
         this.ninjaRepository = ninjaRepository;
+        this.ninjaMapper = ninjaMapper;
     }
 
     //Listar todos so meus ninjas
@@ -31,8 +32,10 @@ public class NinjaService {
         Optional <NinjaModel> ninjaPorId = ninjaRepository.findById(id);
         return ninjaPorId.orElse(null);
     }
-    public NinjaModel CriarNinja(NinjaModel ninja){
-      return ninjaRepository.save(ninja);
+    public NinjaDTO CriarNinja(NinjaDTO ninjaDTO) {
+        NinjaModel ninja = ninjaMapper.map(ninjaDTO);
+        ninja = ninjaRepository.save(ninja);
+        return ninjaMapper.map(ninja);
     }
 
     public void deletarNinjaPoId( Long id){
