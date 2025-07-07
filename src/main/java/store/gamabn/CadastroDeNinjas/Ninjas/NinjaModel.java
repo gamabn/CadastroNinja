@@ -5,6 +5,7 @@ import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import lombok.ToString;
 import store.gamabn.CadastroDeNinjas.Missoes.MissoesModel;
 
 //JPA = java PERSISTENCE API
@@ -13,6 +14,7 @@ import store.gamabn.CadastroDeNinjas.Missoes.MissoesModel;
 @NoArgsConstructor
 @AllArgsConstructor
 @Data
+@ToString(exclude = "missoes")
 public class NinjaModel {
 
     @Id
